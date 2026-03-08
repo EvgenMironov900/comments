@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Комментарии в веб-разработке</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        
+        .section {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+            border-right: 1px solid #eee;
+        }
+        
+        .section:last-child {
+            border-right: none;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .code-block {
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .comment {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        
+        .playground {
+            background: #2c3e50;
+            padding: 30px;
+            color: white;
+            border-radius: 0 0 15px 15px;
+        }
+        
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin-bottom: 15px;
+            resize: vertical;
+        }
+        
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #2980b9;
+        }
+        
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            min-height: 100px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: white;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .section {
+                border-right: none;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .section:last-child {
+                border-bottom: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Комментарии в веб-разработке</h1>
+            <p class="subtitle">Справочник по комментированию кода в HTML, CSS и JavaScript</p>
+        </header>
+        
+        <div class="content">
+            <div class="section">
+                <h2>HTML-комментарии</h2>
+                <p>В HTML комментарии создаются с помощью специальных тегов:</p>
+                
+                <div class="code-block">&lt;!-- Это комментарий в HTML --&gt;
+&lt;!-- 
+  Это многострочный
+  комментарий в HTML
+--&gt;
+
+&lt;div class="content"&gt;
+  &lt;!-- <span class="comment">Этот комментарий скроет код от браузера</span> --&gt;
+  &lt;p&gt;Видимый контент&lt;/p&gt;
+&lt;/div&gt;</div>
+                
+                <p>Комментарии в HTML не отображаются на странице и полезны для:</p>
+                <ul>
+                    <li>Объяснения структуры кода</li>
+                    <li>Временного скрытия участков кода</li>
+                    <li>Добавления заметок для других разработчиков</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>CSS-комментарии</h2>
+                <p>В CSS комментарии создаются с помощью специальных символов:</p>
+                
+                <div class="code-block">/* Это комментарий в CSS */
+/*
+  Это многострочный
+  комментарий в CSS
+*/
+
+.container {
+  width: 100%; /* <span class="comment">Ширина контейнера</span> */
+  /* display: none; <span class="comment">Временно скрыто</span> */
+  padding: 20px;
+}</div>
+                
+                <p>Комментарии в CSS полезны для:</p>
+                <ul>
+                    <li>Объяснения стилей</li>
+                    <li>Организации кода по разделам</li>
+                    <li>Временного отключения стилей</li>
+                </ul>
+            </div>
+            
+            <div class="section">
+                <h2>JavaScript-комментарии</h2>
+                <p>В JavaScript есть два типа комментариев:</p>
+                
+                <div class="code-block">// Однострочный комментарий
+
+/*
+  Многострочный
+  комментарий
+*/
+
+function calculate() {
+  // <span class="comment">Этот комментарий объясняет следующую строку</span>
+  let result = 10 + 20; // <span class="comment">Можно комментировать в конце строки</span>
+  
+  /*
+  let temp = 100;
+  console.log(temp);
+  <span class="comment">Этот код временно отключен</span>
+  */
+  
+  return result;
+}</div>
+                
+                <p>Комментарии в JavaScript полезны для:</p>
+                <ul>
+                    <li>Объяснения сложной логики</li>
+                    <li>Отладки кода</li>
+                    <li>Документирования функций</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="playground">
+            <h2>Песочница для экспериментов</h2>
+            <p>Попробуйте добавить комментарии в код ниже и посмотрите результат:</p>
+            
+            <textarea id="codeInput">&lt;h3&gt;Привет, мир!&lt;/h3&gt;
+&lt;p&gt;Это пример HTML-кода.&lt;/p&gt;
+&lt;script&gt;
+  // Простая функция
+  function showMessage() {
+    alert("Hello!");
+  }
+&lt;/script&gt;
+&lt;style&gt;
+  body {
+    color: #333;
+    /* font-weight: bold; */
+  }
+&lt;/style&gt;</textarea>
+            
+            <button onclick="runCode()">Запустить код</button>
+            
+            <div class="result" id="result">
+                <p>Результат отобразится здесь после запуска кода...</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Создано для вас к Дню Программиста! 🎉</p>
+    </footer>
+
+    <script>
+        function runCode() {
+            const code = document.getElementById('codeInput').value;
+            const resultDiv = document.getElementById('result');
+            
+            try {
+                // Очищаем предыдущий результат
+                resultDiv.innerHTML = '';
+                
+                // Создаем iframe для безопасного выполнения кода
+                const iframe = document.createElement('iframe');
+                iframe.style.width = '100%';
+                iframe.style.height = '200px';
+                iframe.style.border = 'none';
+                iframe.style.backgroundColor = 'white';
+                
+                resultDiv.appendChild(iframe);
+                
+                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                
+                // Записываем код в iframe
+                iframeDoc.open();
+                iframeDoc.write(code);
+                iframeDoc.close();
+            } catch (error) {
+                resultDiv.innerHTML = `<p style="color: #e74c3c;">Ошибка: ${error.message}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>
